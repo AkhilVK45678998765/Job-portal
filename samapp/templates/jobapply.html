@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .container .row #b {
+            width: 500px;
+        }
+
+        .container {
+            margin-top: 50px;
+            background-image:url("https://i.pinimg.com/474x/85/e9/8e/85e98e84cdb0ba1ceaa5038f525337fb.jpg")
+        }
+         body{
+           background-image:url("https://i.pinimg.com/474x/85/e9/8e/85e98e84cdb0ba1ceaa5038f525337fb.jpg")
+           }
+
+
+
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6b64bdfcb8.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>
+    <center><strong style="color:white">Job application form</strong></center>
+</h1>
+<div class="container text-white" style="background-color: rgb(245,243,243);">
+    <center>
+        <form method="post" enctype="multipart/form-data">{% csrf_token %}
+            <div class="row">
+                <div class="col-4">
+                    <label class="form-label"><b class="a">Company name</b></label>
+                </div>
+                <div class="col-8 " id="b">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
+                        <input type="text" name="companyname" class="form-control" placeholder="Company Name"
+                               value="{{cmp}}" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <label class="form-label"><b class="a">Job title</b></label>
+                </div>
+                <div class="col-8 " id="b">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                        <input type="text" name="jobtitle" class="form-control" placeholder="Job title" value="{{jt}}"
+                               readonly>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-4">
+                    <label class="form-label"><b class="a">Fullname</b></label>
+                </div>
+                <div class="col-8 " id="b">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                        <input type="text" name="fullname" class="form-control" placeholder="Fullname">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <label class="form-label"><b class="a">Email</b></label>
+                </div>
+                <div class="col-8 " id="b">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                        <input type="email" name="email" class="form-control" placeholder="Email">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4">
+                    <label class="form-label"><b class="a">Resume</b></label>
+                </div>
+                <div class="col-8 " id="b">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                        <input type="file" name="resume" class="form-control" placeholder="Upload your resume">
+                    </div>
+                </div>
+            </div>
+
+
+            <center>
+                <!--                        <button type="submit" class="btn btn-primary text-dark" style="width:200px ;background-color:#c4ff4d"">Apply<i-->
+                <!--                                class="fa-solid fa-paper-plane"></i></button>-->
+                <button type="submit" style="background-color:#c4ff4d;width:100px;border-radius:20px;height:50px">Apply</button>
+            </center>
+
+
+        </form>
+    </center>
+</div>
+
+
+</body>
+</html>

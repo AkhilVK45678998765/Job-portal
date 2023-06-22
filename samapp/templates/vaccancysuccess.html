@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .navbar{
+          background-color: #c4ff4d;
+          }
+
+          a:hover{
+          transform: scale(1.2);
+        }
+
+        body{
+        background-image:url("https://i.pinimg.com/474x/73/93/91/73939130e8f6bdc984881bfb8e34c22c.jpg")
+
+        }
+
+
+
+
+
+
+
+
+
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6b64bdfcb8.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-light ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="http://127.0.0.1:8000/samapp/index/"><i class="fa-solid fa-house">HOME</i></a>
+
+        <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"><i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header " style="background: #16222A;
+background: -webkit-linear-gradient(to bottom, #3A6073, #16222A);
+background: linear-gradient(to bottom, #3A6073, #16222A);">
+                <img src="https://i.pinimg.com/474x/cc/a0/ca/cca0ca55c788346ca395303f6c2d435b.jpg" height="200px"
+                     width="500px">
+
+
+            </div>
+            <div class="offcanvas-body " style="background: #16222A;
+background: -webkit-linear-gradient(to bottom, #3A6073, #16222A);
+background: linear-gradient(to bottom, #3A6073, #16222A);">
+                <center>
+
+                    <h3 style="color:white"><strong>{{cmp}}</strong></h3>
+                    <br>
+
+
+                    <button type="button" class="btn  btn-lg" id="a"><a
+                            href="#"
+                            style="color:white"><b><i class="fa-solid fa-building">About company</i></b></a></button>
+                    <br><br>
+                    <button type="button" class="btn  btn-lg" id="a"><a
+                            href="http://127.0.0.1:8000/samapp/profile/"
+                            style="color:white"><b><i class="fa-solid fa-pen-to-square">Go to profile</i></b></a>
+                    </button>
+                    <br><br>
+                    <button type="button" class="btn  btn-lg" id="a"><a href="http://127.0.0.1:8000/samapp/index/"
+                                                                        style="color:white"><b><i
+                            class="fa-solid fa-right-from-bracket">Logout</i></b></a>
+                    </button>
+                    <br><br>
+                </center>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+{% for i in a %}
+
+{% if i.companyname == b %}
+
+<div class="container mt-4 mb-4">
+    <div class="row">
+        <div class="col-12 ">
+            <div class="card">
+                <div class="card-body" style="background: #16222A;
+background: -webkit-linear-gradient(to bottom, #3A6073, #16222A);
+background: linear-gradient(to bottom, #3A6073, #16222A);
+;">
+
+                    <p style="color: white"><strong><h4 style="color: white;font-family:cursive"><i
+                        class="fa-solid fa-graduation-cap"></i> {{i.jobtitle}}</h4></strong></p>
+                    <br>
+
+                    <p style="color: white"><strong><h5 style="color: white"><i class="fa-solid fa-building"></i>
+                    {{i.companyname}}</h5></strong></p>
+                    <br>
+
+                    <p style="color: white"><strong>Job type : </strong>{{i.jobtype}}</p>
+                    <p style="color: white"><strong>Work type : </strong>{{i.worktype}}</p>
+                    <p style="color: white"><strong>Experience Required : </strong>{{i.experiencerequired}}</p>
+                    <p style="color: white"><strong>Qualification Required : </strong>{{i.qualificationrequired}}</p>
+                    <br>
+                    <a href="http://127.0.0.1:8000/samapp/vaccancyedit/{{i.id}}" class="btn  text-dark"
+                       style=" color:white; border-radius: 25%;background-color:#c4ff4d">EDIT</a>
+                    &nbsp;
+                    <a href="http://127.0.0.1:8000/samapp/vaccancydelete/{{i.id}}" class="btn btn-danger"
+                       style="border-radius: 25%;">DELETE</a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endif %}
+{% endfor %}
+
+</body>
+{% include 'footer.html' %}
+</html>
+

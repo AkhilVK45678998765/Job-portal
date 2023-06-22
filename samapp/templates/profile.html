@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .navbar{
+          background-color: #c4ff4d;
+          }
+
+          a:hover{
+          transform: scale(1.2);
+        }
+
+        body{
+        background-image:url("https://i.pinimg.com/474x/eb/a8/1b/eba81b1b5409d53ce8756793c20b9c5c.jpg")
+        }
+
+
+
+
+
+
+
+
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/6b64bdfcb8.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-light ">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="http://127.0.0.1:8000/samapp/index/"><i class="fa-solid fa-house">HOME</i></a>
+
+        <button class="btn btn-dark" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"><i class="fa-solid fa-bars"></i>
+        </button>
+
+        <div class="offcanvas offcanvas-end " tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header " style="background: #16222A;
+background: -webkit-linear-gradient(to bottom, #3A6073, #16222A);
+background: linear-gradient(to bottom, #3A6073, #16222A);">
+                <img src="https://i.pinimg.com/474x/cc/a0/ca/cca0ca55c788346ca395303f6c2d435b.jpg" height="200px"
+                     width="500px">
+
+                <!--                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"-->
+                <!--                        aria-label="Close"></button>-->
+            </div>
+            <div class="offcanvas-body " style="background: #16222A;
+background: -webkit-linear-gradient(to bottom, #3A6073, #16222A);
+background: linear-gradient(to bottom, #3A6073, #16222A);">
+                <center>
+
+                    <h3 style="color:white"><strong>{{cmp}}</strong></h3>
+                    <br>
+
+
+                    <button type="button" class="btn  btn-lg" id="a"><a
+                            href="#"
+                            style="color:white"><b><i class="fa-solid fa-building">About company</i></b></a></button>
+                    <br><br>
+                    <button type="button" class="btn  btn-lg" id="a"><a
+                            href="http://127.0.0.1:8000/samapp/editcompanyprofile/{{id}}"
+                            style="color:white"><b><i class="fa-solid fa-pen-to-square">Edit profile</i></b></a>
+                    </button>
+                    <br><br>
+                    <button type="button" class="btn  btn-lg" id="a"><a href="http://127.0.0.1:8000/samapp/index/"
+                                                                        style="color:white"><b><i class="fa-solid fa-right-from-bracket">Logout</i></b></a>
+                    </button>
+                    <br><br>
+                </center>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<!--2nd section-->
+<div class="container mt-5 mb-5 p-5">
+    <div class="row">
+        <div class="col-3">
+            <div class="card " style="width: 15rem;">
+                <img src="https://i.pinimg.com/474x/49/47/94/4947948b0ad0a06df1f706027213d8d0.jpg" class="card-img-top"
+                     alt="...">
+                <div class="card-body">
+                    <!--                    <h5 class="card-title">Upload vaccancies</h5>-->
+                    <!--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the-->
+                    <!--                        card's content.</p>-->
+                    <center><a href="http://127.0.0.1:8000/samapp/vaccancyupload/{{id}}" class="btn "
+                               style="background-color:#c4ff4d;">Upload vaccancies</a></center>
+                </div>
+            </div>
+
+        </div>    <!--col -->
+        <div class="col-3">
+            <div class="card" style="width: 15rem;">
+                <img src="https://i.pinimg.com/474x/ed/76/18/ed761869db27c9763fd9b7f08896099b.jpg" class="card-img-top"
+                     alt="...">
+                <div class="card-body">
+                    <!--                    <h5 class="card-title">View applied users</h5>-->
+                    <!--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the-->
+                    <!--                        card's content.</p>-->
+                    <center><a href="http://127.0.0.1:8000/samapp/viewappliedusers/" class="btn" style="background-color:#c4ff4d;">View applied users</a></center>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 15rem;">
+                <img src="https://i.pinimg.com/474x/3e/70/2a/3e702a4fef8908fa38addf64218be71b.jpg" class="card-img-top"
+                     alt="...">
+                <div class="card-body">
+                    <!--                    <h5 class="card-title">View companies</h5>-->
+                    <!--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the-->
+                    <!--                        card's content.</p>-->
+                    <center><a href="http://127.0.0.1:8000/samapp/viewcompanies/" class="btn " style="background-color:#c4ff4d;">View companies</a></center>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-3">
+            <div class="card" style="width: 15rem;">
+                <img src="https://i.pinimg.com/474x/6b/23/9d/6b239d60018cab30e245bf6e68289070.jpg" class="card-img-top"
+                     alt="...">
+                <div class="card-body">
+                    <!--                    <h5 class="card-title">View applied users</h5>-->
+                    <!--                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the-->
+                    <!--                        card's content.</p>-->
+                    <center><a href="http://127.0.0.1:8000/samapp/vaccancysuccess/" class="btn"
+                               style="background-color:#c4ff4d;">View posted jobs</a></center>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+</body>
+{% include 'footer.html' %}
+</html>

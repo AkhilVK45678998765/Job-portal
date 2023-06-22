@@ -1,0 +1,165 @@
+
+<!-- work based on input group,form -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .container .row #b {
+            width: 500px;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+        body{
+        background-image:url("https://i.pinimg.com/474x/ff/50/21/ff50211a1ce3d394b286f336ec3730be.jpg")
+        }
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6b64bdfcb8.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% include 'samplenavbar.html' %}
+<body >
+    <h1>
+        <center><strong style="color:white">Add job</strong></center>
+    </h1>
+    <div class="container text-white" >
+        <center>
+            <form method="post">{% csrf_token %}
+                <div class="row">
+                    <div class="col-4">
+                        <label class="form-label"><b class="a">Company name</b></label>
+                    </div>
+                    <div class="col-8 " id="b">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
+                            <input type="text"  name="companyname" class="form-control" placeholder="Company name" value="{{cm}}" required readonly>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-4">
+                        <label class="form-label"><b class="a">Email</b></label>
+                    </div>
+                    <div class="col-8 " id="b">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                            <input type="email" name="email" class="form-control" placeholder="Email" value="{{em}}" required readonly>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="form-label"><b class="a">Job title</b></label>
+                        </div>
+                        <div class="col-8 " id="b">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-user-graduate"></i></span>
+                                <input type="text" name="jobtitle" class="form-control" placeholder="Job title" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="form-label"><strong class="a">Job Type</strong></label>
+                        </div>
+                        <div class="col-8" id="b">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text  " ><i class="fa-solid fa-list"></i></span>
+                                <select class="form-select" name="jobtype" required>
+                                    <option>Select  job type</option>
+                                    <option>Full time</option>
+                                    <option>Part time</option>
+                                </select>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-4">
+                        <label class="form-label"><strong class="a">Work Type</strong></label>
+                    </div>
+                    <div class="col-8" id="b">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" ><i class="fa-solid fa-list"></i></span>
+                            <select class="form-select" name="worktype" required>
+                                <option>Select  work type</option>
+                                <option>Hybrid</option>
+                                <option>Remote</option>
+                            </select>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-4">
+                    <label class="form-label"><strong class="a">Experience required</strong></label>
+                </div>
+                <div class="col-8" id="b">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text"><i class="fa-solid fa-list"></i></span>
+                        <select class="form-select" name="experiencerequired" required>
+                            <option >Select experience required</option>
+                            <option>0-1</option>
+                            <option>1-2</option>
+                            <option>2-3</option>
+                            <option>3-4</option>
+                            <option>4-5</option>
+                            <option>5-6</option>
+                            <option>6-7</option>
+                            <option>7-8</option>
+                            <option>8-9</option>
+                            <option>9-10</option>
+                        </select>
+                </div>
+            </div>
+        </div>
+
+
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="form-label"><b class="a">Qualification required</b></label>
+                        </div>
+                        <div class="col-8 " id="b">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-graduation-cap"></i></span>
+                                <input type="text" name="qualificationrequired" class="form-control" placeholder="Qualification required" required>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <center>
+                        <button type="submit" class="btn btn-primary text-dark" style="width:200px ;background-color:#c4ff4d">Upload job<i
+                                class="fa-solid fa-paper-plane"></i></button>
+                    </center>
+
+
+            </form>
+        </center>
+    </div>
+
+
+
+</body>
+
+</html>

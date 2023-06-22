@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <style>
+        .container .row #b {
+            width: 500px;
+        }
+
+        .container {
+            margin-top: 50px;
+            background-image:url("https://i.pinimg.com/474x/85/e9/8e/85e98e84cdb0ba1ceaa5038f525337fb.jpg")
+        }
+         body{
+           background-image:url("https://i.pinimg.com/474x/85/e9/8e/85e98e84cdb0ba1ceaa5038f525337fb.jpg")
+           }
+
+
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/6b64bdfcb8.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+{% include 'samplenavbar.html' %}
+<body >
+    <h1>
+        <center><strong style="color:white">Registration form</strong></center>
+    </h1>
+    <div class="container text-white" style="background-color: rgb(245,243,243);">
+        <center>
+            <form method="post">{% csrf_token %}
+                <div class="row">
+                    <div class="col-4">
+                        <label class="form-label"><b class="a">Company name</b></label>
+                    </div>
+                    <div class="col-8 " id="b">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa-solid fa-building"></i></span>
+                            <input type="text" name="companyname" class="form-control" placeholder="Company Name" value="{{a.companyname}}" readonly>
+                        </div>
+                    </div>
+                </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="form-label"><b class="a">Email</b></label>
+                        </div>
+                        <div class="col-8 " id="b">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                                <input type="email"  name="email" class="form-control" placeholder="Email" value="{{a.email}}" readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="form-label"><b class="a">Password</b></label>
+                        </div>
+                        <div class="col-8 " id="b">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                                <input type="password" name="password" class="form-control" placeholder="Password" value="{{a.password}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="form-label"><b class="a"> Confirm Password</b></label>
+                        </div>
+                        <div class="col-8 " id="b">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                                <input type="password"  name="password2" class="form-control" placeholder=" Confirm Password" value="{{a.password2}}">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="form-label"><b class="a">Mobile</b></label>
+                        </div>
+                        <div class="col-8 " id="b">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                                <input type="number" name="mobile" class="form-control" placeholder="Mobile" value="{{a.mobile}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-4">
+                            <label class="form-label"><b class="a">Address</b></label>
+                        </div>
+                        <div class="col-8 " id="b">
+                            <div class="input-group mb-3">
+                                <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
+                                <input type="text"  name="address" class="form-control" placeholder="Address" value="{{a.address}}">
+                            </div>
+                        </div>
+                    </div>
+                    <center>
+                        <button type="submit" class="btn btn-primary text-dark" style="width:200px ;background-color:#c4ff4d"">UPDATE<i
+                                class="fa-solid fa-paper-plane"></i></button>
+                    </center>
+
+
+            </form>
+        </center>
+    </div>
+
+
+
+</body>
+
+
+</html>
